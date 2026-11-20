@@ -2,7 +2,7 @@ import Container from "@/components/shared/Container";
 import Logo from "@/components/shared/Logo";
 import Navbar from "./Navbar";
 import HeaderCTA from "./HeaderCTA";
-import HeaderMobile from "./HeaderMobile";
+import MobileHeader from "./MobileHeader";
 
 export default function Header() {
   return (
@@ -12,7 +12,7 @@ export default function Header() {
           <Logo />
           <Navbar />
           <HeaderCTA />
-          <HeaderMobile />
+          <MobileHeader />
         </div>
       </Container>
     </header>

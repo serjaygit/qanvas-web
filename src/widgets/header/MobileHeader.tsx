@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 
-export default function HeaderMobile() {
+export default function MobileHeader() {
   return (
     <Sheet>
       <SheetTrigger className="sm:hidden" asChild>
@@ -20,7 +20,7 @@ export default function HeaderMobile() {
       <SheetContent>
         <SheetHeader>
           <SheetTitle>
-            <Logo />
+            <Logo iconOnly />
           </SheetTitle>
         </SheetHeader>
       </SheetContent>
