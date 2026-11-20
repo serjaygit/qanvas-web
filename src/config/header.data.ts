@@ -1,4 +1,9 @@
-export const HEADER_DATA = [
+export type THeaderLink = {
+  label: string;
+  href: string;
+};
+
+export const HEADER_DATA: THeaderLink[] = [
   {
     label: "Features",
     href: "#features",

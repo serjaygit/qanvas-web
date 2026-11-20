@@ -9,11 +9,11 @@ import {
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 
-export default function MobileHeader() {
+export default function SiteMobileHeader() {
   return (
     <Sheet>
       <SheetTrigger className="sm:hidden" asChild>
-        <Button variant="outline" size="icon-lg">
+        <Button variant="outline" size="icon">
           <Menu />
         </Button>
       </SheetTrigger>

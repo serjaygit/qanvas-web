@@ -1,16 +1,16 @@
 "use client";
 
-import { SkeletonAvatar } from "@/components/shared/skeletons/SkeletonAvatar";
+import { SkeletonBars } from "@/components/shared/skeletons/SkeletonBars";
 import { Button } from "@/components/ui/button";
 import { useSession } from "@/lib/auth-client";
 
 import Link from "next/link";
 
-export default function HeaderCTA() {
+export default function SiteHeaderActions() {
   const { data: session, isPending } = useSession();
 
   if (isPending) {
-    return <SkeletonAvatar />;
+    return <SkeletonBars />;
   }
 
   return (
@@ -25,9 +25,14 @@ export default function HeaderCTA() {
           </Button>
         </>
       ) : (
-        <Button size="lg" asChild>
-          <Link href="/dashboard">Dashboard</Link>
-        </Button>
+        <>
+          <Button size="lg" variant="ghost" asChild>
+            <Link href="/portal">Client Portal</Link>
+          </Button>
+          <Button size="lg" asChild>
+            <Link href="/dashboard">Dashboard</Link>
+          </Button>
+        </>
       )}
     </div>
   );
