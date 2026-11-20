@@ -39,7 +39,7 @@ export default function RegisterForm() {
         return;
       }
 
-      router.push("/dashboard");
+      router.refresh();
     } catch {
       toast.error("Something went wrong. Please try again.");
     }

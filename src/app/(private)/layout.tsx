@@ -1,13 +1,17 @@
-import AuthGuard from "@/providers/AuthGuard";
+export const instant = false;
+
+import { requireAuth } from "@/lib/session";
 
 interface Props {
   children: React.ReactNode;
 }
 
-export default function PrivateLayout({ children }: Props) {
+export default async function PrivateLayout({ children }: Props) {
+  await requireAuth();
+
   return (
-    <AuthGuard>
-      <main className="min-h-screen">{children}</main>
-    </AuthGuard>
+    <>
+      <main>{children}</main>
+    </>
   );
 }
