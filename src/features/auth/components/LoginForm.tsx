@@ -11,6 +11,8 @@ import { signIn } from "@/lib/auth-client";
 import { toast } from "sonner";
 
 export default function LoginForm() {
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
@@ -34,6 +36,8 @@ export default function LoginForm() {
         toast.error(error.message || "Failed to create account");
         return;
       }
+
+      router.refresh();
     } catch {
       toast.error("Something went wrong. Please try again.");
     }

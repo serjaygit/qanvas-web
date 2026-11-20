@@ -1,5 +1,6 @@
 "use client";
 
+import { SkeletonAvatar } from "@/components/shared/skeletons/SkeletonAvatar";
 import { Button } from "@/components/ui/button";
 import { useSession } from "@/lib/auth-client";
 
@@ -9,7 +10,7 @@ export default function HeaderCTA() {
   const { data: session, isPending } = useSession();
 
   if (isPending) {
-    return <p>Loading session...</p>;
+    return <SkeletonAvatar />;
   }
 
   return (
