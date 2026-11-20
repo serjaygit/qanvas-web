@@ -1,4 +1,5 @@
-import Container from "@/components/shared/Container";
+import Logo from "@/components/shared/Logo";
+import GuestGuard from "@/providers/GuestGuard";
 
 interface Props {
   children: React.ReactNode;
@@ -6,16 +7,26 @@ interface Props {
 
 export default function AuthLayout({ children }: Props) {
   return (
-    <main className="relative">
-      {/* Background grid */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(currentColor_1px,transparent_1px)] bg-size-[30px_30px] text-foreground/15 mask-[radial-gradient(ellipse_80%_70%_at_50%_40%,black,transparent)]"
-      />
+    <GuestGuard>
+      <div className="grid min-h-screen lg:grid-cols-[1fr_2fr]">
+        <aside className="hidden border-r border-sidebar-accent bg-sidebar p-8 lg:flex flex-col gap-16">
+          <Logo />
+          <div className="flex-1 max-w-md">
+            <span className="text-primary uppercase text-xs tracking-wider font-medium mb-4 block">
+              Built for client work
+            </span>
+            <h1 className="text-5xl font-semibold leading-tight mb-4">
+              Run the work. Share the progress. Earn the trust.
+            </h1>
+            <p className="text-muted-foreground">
+              Qanvas gives your team a powerful project system and every client
+              a clear, beautiful portal.
+            </p>
+          </div>
+        </aside>
 
-      <Container className="min-h-screen flex items-center justify-center">
-        {children}
-      </Container>
-    </main>
+        <main>{children}</main>
+      </div>
+    </GuestGuard>
   );
 }
