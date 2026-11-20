@@ -1,5 +1,5 @@
 import Footer from "@/widgets/footer/Footer";
-import Header from "@/widgets/header/Header";
+import SiteHeader from "@/widgets/site-header/SiteHeader";
 
 interface Props {
   children: React.ReactNode;
@@ -8,7 +8,7 @@ interface Props {
 export default function PublicLayout({ children }: Props) {
   return (
     <>
-      <Header />
+      <SiteHeader />
       <main className="min-h-screen">{children}</main>
       <Footer />
     </>

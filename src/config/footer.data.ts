@@ -1,14 +1,14 @@
-export type FooterLink = {
+export type TFooterLink = {
   label: string;
   href: string;
 };
 
-export type FooterGroup = {
+export type TFooterGroup = {
   label: string;
-  items: FooterLink[];
+  items: TFooterLink[];
 };
 
-export const FOOTER_DATA: FooterGroup[] = [
+export const FOOTER_DATA: TFooterGroup[] = [
   {
     label: "Product",
     items: [
@@ -37,7 +37,7 @@ export const FOOTER_DATA: FooterGroup[] = [
   },
 ];
 
-export const FOOTER_LEGAL: FooterLink[] = [
+export const FOOTER_LEGAL: TFooterLink[] = [
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Terms of Service", href: "/terms" },
 ];
